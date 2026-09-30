@@ -28,6 +28,11 @@ jobs:
 
       - name: Compilar y correr pruebas
         run: ./mvnw clean test
+        env:
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          CORS_ORIGINES: ${{ secrets.CORS_ORIGINES }}
 
   # ==========================================
   # FASE 2: DESPLIEGUE CONTINUO (CD)
